@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,6 +132,11 @@ STATICFILES_DIRS = [
     Path.joinpath(BASE_DIR, 'btre/static')
 ]
 
-#Media files setting
-MEDIA_ROOT=Path.joinpath(BASE_DIR, 'media')
-MEDIA_URL='/media/'
+# Media files setting
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+# Messaging
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}

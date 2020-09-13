@@ -13,13 +13,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BT Real Estate</title>
+    <title>BT Real Estate {% block title %} {% endblock %}</title>
 </head>
 
 <body>
     <!-- Topbar-->
-{% include 'partials/_topbar.html'%}
-{% include 'partials/_navbar.html'%}
+    {% include 'partials/_topbar.html'%}
+    {% include 'partials/_navbar.html'%}
 
     {% block content %} {% endblock %}
 

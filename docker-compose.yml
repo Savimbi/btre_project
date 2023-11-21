@@ -2,19 +2,16 @@ version: '3'
 
 services:
   web:
-    build: .
-    command: gunicorn your_project_name.wsgi:application -b 0.0.0.0:7000
-    volumes:
-      - .:/app
+    image: dudosart/btre-pro
     ports:
-      - "7000:7000"
+      - "8080:7000"
     depends_on:
       - db
-    env_file:
-      - .env
 
   db:
     image: postgres:latest
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: btredb-container
       POSTGRES_USER: postgres
